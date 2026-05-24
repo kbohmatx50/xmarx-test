@@ -1,32 +1,33 @@
 name: Minimal CI
 
 on:
-push:
-branches: [ main, users/** ]
-pull_request:
-branches: [ main ]
-workflow_dispatch:
+  push:
+    branches: [ main, users/** ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
-build:
-runs-on: ubuntu-latest
-steps:
-- name: Checkout
-uses: actions/checkout@v4
- - name: Build
-    run: echo "Build step ran on branch ${{ github.ref_name }}"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-test:
-needs: [build]
-runs-on: ubuntu-latest
-steps:
-- name: Test
-run: echo "Test step ran"
+      - name: Build
+        run: echo "Build step ran on branch ${{ github.ref_name }}"
 
-deploy_simulated:
-needs: [test]
-if: github.ref == 'refs/heads/main'
-runs-on: ubuntu-latest
-steps:
-- name: Simulated deploy
-run: echo "Deploy step runs only on main"
+  test:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test
+        run: echo "Test step ran"
+
+  deploy_simulated:
+    needs: [test]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulated deploy
+        run: echo "Deploy step runs only on main"
