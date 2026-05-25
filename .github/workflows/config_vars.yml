@@ -9,10 +9,8 @@ env:
 jobs:
   greeting_job:
     runs-on: ubuntu-latest
-
     env:
       GREETING: Hola
-
     steps:
       - name: Say hi
         env:
