@@ -1,19 +1,21 @@
 name: Testing Config Variables
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
 
 env:
   cloud: google-cld
 
 jobs:
   greeting_job:
-    runs-on: ubuntu_latest
-  env:
-    Greeting: Hola
-  steps:
-    - name: "Say hi"
-      run: echo "$Greeting $FirstName w project: ${{vars.PROJECT_ID}}"
-      
-      env:
-        First_Name: Keith
+    runs-on: ubuntu-latest
+
+    env:
+      Greeting: Hola
+
+    steps:
+      - name: Say hi
+        run: echo "$Greeting $First_Name w project: ${{ vars.PROJECT_ID }}"
+
+        env:
+          First_Name: Keith
