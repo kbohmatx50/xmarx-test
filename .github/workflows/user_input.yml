@@ -19,4 +19,4 @@ jobs:
     steps:
       - name: Add Numbers
         id: sum
-        run: echo $(( ${{ github.event.inputs.number1 }} + ${{ github.event.inputs.number2 }} ))"
+        run: echo "$(( ${{ github.event.inputs.number1 }} + ${{ github.event.inputs.number2 }} ))"
