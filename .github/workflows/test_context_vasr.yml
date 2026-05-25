@@ -1,0 +1,19 @@
+name: Testing Context Variables
+
+on:
+  workflow_dispatch:
+
+env:
+  CLOUD: google-cld
+
+jobs:
+  test_context:
+    runs-on: ubuntu-latest
+    env:
+      GREETING: Hola
+    steps:
+      - name: "Checking Context var"
+        run: |
+          echo "repo: ${{github.repository"}}
+          echo "repo: ${{github.workflow"}}
+          echo "repo: ${{github.triggering_acotor"}}
