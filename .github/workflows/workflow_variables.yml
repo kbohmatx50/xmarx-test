@@ -1,6 +1,7 @@
 name: Testing Variables
 
 on:
+  workflow_dispatch: # <--- THIS ENABLES THE "RUN WORKFLOW" BUTTON
   workflow_run:
     workflows: ["Your Main Workflow Name Here"]
     types: [completed]
