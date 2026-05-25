@@ -16,4 +16,4 @@ jobs:
       Greeting: Hello
     steps:
       - name: "say on monday"
-        run: echo "say hi"
+        run: echo "say hi from $cloud"
