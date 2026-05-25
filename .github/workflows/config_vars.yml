@@ -19,4 +19,4 @@ jobs:
           FIRST_NAME: Keith
 
         run: echo "hi $FIRST_NAME"
-        run: echo "$PROJECT_ID"
+        run: echo "${{vars.PROJECT_ID}}"
