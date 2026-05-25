@@ -4,18 +4,18 @@ on:
   workflow_dispatch:
 
 env:
-  cloud: google-cld
+  CLOUD: google-cld
 
 jobs:
   greeting_job:
     runs-on: ubuntu-latest
 
     env:
-      Greeting: Hola
+      GREETING: Hola
 
     steps:
       - name: Say hi
-        run: echo "$Greeting $First_Name w project: ${{ vars.PROJECT_ID }}"
-
         env:
-          First_Name: Keith
+          FIRST_NAME: Keith
+
+        run: echo "$GREETING $FIRST_NAME w project: ${{ vars.PROJECT_ID }}"
