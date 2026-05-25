@@ -2,6 +2,8 @@ name: Testing Variables
 
 on:
   workflow_run:
+    workflows: ["Your Main Workflow Name Here"]
+    types: [completed]
 
 env:
   cloud: google-cloud
@@ -12,5 +14,5 @@ jobs:
     env:
       Greeting: Hello
     steps:
-      -name: "say on monday: 
-       run: echo "say hi"
+      - name: "say on monday"
+        run: echo "say hi"
