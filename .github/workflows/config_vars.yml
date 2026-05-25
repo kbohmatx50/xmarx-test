@@ -19,4 +19,4 @@ jobs:
           FIRST_NAME: Keith
 
         run: echo "hi $FIRST_NAME"
-        run: echo ""
+        run: echo "$PROJECT_ID"
