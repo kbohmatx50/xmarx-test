@@ -19,4 +19,13 @@ jobs:
     steps:
       - name: Add Numbers
         id: sum
-        run: echo "$(( ${{ github.event.inputs.number1 }} + ${{ github.event.inputs.number2 }} ))"
+        run: |
+          # Safely assign the inputs to local environment variables first
+          NUM1=${{ github.event.inputs.number1 }}
+          NUM2=${{ github.event.inputs.number2 }}
+          
+          # Perform the math using Bash
+          TOTAL=$(( NUM1 + NUM2 ))
+          
+          # Save it to outputs using the modern syntax
+          echo "sum=$TOTAL" >> $GITHUB_OUTPUT
