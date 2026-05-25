@@ -18,4 +18,5 @@ jobs:
         env:
           FIRST_NAME: Keith
 
-        run: echo "$GREETING $FIRST_NAME w project: ${{ vars.PROJECT_ID }}"
+        run: echo "hi $FIRST_NAME"
+        run: echo ""
