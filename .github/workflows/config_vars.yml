@@ -12,9 +12,9 @@ jobs:
     env:
       GREETING: Hola
     steps:
-      - name: Say hi
+      - name: Say hi and print project ID
         env:
           FIRST_NAME: Keith
-
-        run: echo "hi $FIRST_NAME"
-        run: echo "${{vars.PROJECT_ID}}"
+        run: |
+          echo "hi $FIRST_NAME"
+          echo "${{ vars.PROJECT_ID }}"
