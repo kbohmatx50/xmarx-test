@@ -14,6 +14,6 @@ jobs:
     steps:
       - name: "Checking Context var"
         run: |
-          echo "repo: ${{github.repository"}}
-          echo "repo: ${{github.workflow"}}
-          echo "repo: ${{github.triggering_acotor"}}
+          echo "repo: ${{ github.repository }}"
+          echo "workflow: ${{ github.workflow }}"
+          echo "actor: ${{ github.triggering_actor }}"
